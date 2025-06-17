@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detecção de Fraude em Cartão de Crédito</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container d-flex vh-100">
+      <div class="row justify-content-center align-self-center w-100">
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-body">
+              <h3 class="card-title text-center mb-4">Verificação de Fraude</h3>
+              <form id="fraudForm">
+                <div class="mb-3">
+                  <label for="distance_from_home" class="form-label"
+                    >Distância da residência</label
+                  >
+                  <input
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    id="distance_from_home"
+                    name="distance_from_home"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="distance_from_last_transaction" class="form-label"
+                    >Distância da última transação</label
+                  >
+                  <input
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    id="distance_from_last_transaction"
+                    name="distance_from_last_transaction"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="ratio_to_median_purchase_price" class="form-label"
+                    >Razão para o preço médio de compra</label
+                  >
+                  <input
+                    type="number"
+                    step="any"
+                    class="form-control"
+                    id="ratio_to_median_purchase_price"
+                    name="ratio_to_median_purchase_price"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="repeat_retailer" class="form-label"
+                    >Comerciante recorrente?</label
+                  >
+                  <select
+                    class="form-select"
+                    id="repeat_retailer"
+                    name="repeat_retailer"
+                    required
+                  >
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="used_chip" class="form-label">Usou chip?</label>
+                  <select
+                    class="form-select"
+                    id="used_chip"
+                    name="used_chip"
+                    required
+                  >
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="used_pin_number" class="form-label"
+                    >Usou PIN?</label
+                  >
+                  <select
+                    class="form-select"
+                    id="used_pin_number"
+                    name="used_pin_number"
+                    required
+                  >
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="online_order" class="form-label"
+                    >Pedido online?</label
+                  >
+                  <select
+                    class="form-select"
+                    id="online_order"
+                    name="online_order"
+                    required
+                  >
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Verificar
+                </button>
+              </form>
+              <div id="result" class="mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
