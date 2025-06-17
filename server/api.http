@@ -1,0 +1,27 @@
+### PREDICT: FRAUD TRUE
+POST http://127.0.0.1:5000/predict
+Content-Type: application/json
+
+{
+  "distance_from_home": 601.5229191365606,
+  "distance_from_last_transaction": 0.028723206008735267,
+  "ratio_to_median_purchase_price": 0.8597786295284634,
+  "repeat_retailer": 1.0,
+  "used_chip": 0.0,
+  "used_pin_number": 0.0,
+  "online_order": 1.0
+}
+
+### PREDICT: FRAUD FALSE
+POST http://127.0.0.1:5000/predict
+Content-Type: application/json
+
+{
+  "distance_from_home": 4.057044416113516,
+  "distance_from_last_transaction": 2.142441467365621,
+  "ratio_to_median_purchase_price": 0.3680000579792843,
+  "repeat_retailer": 1.0,
+  "used_chip": 0.0,
+  "used_pin_number": 0.0,
+  "online_order": 0.0
+}
